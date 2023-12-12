@@ -1,6 +1,23 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using mind_book_api.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseNpgsql(connectionString);
+});
+
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<DatabaseContext>()
+    .AddDefaultTokenProviders();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
