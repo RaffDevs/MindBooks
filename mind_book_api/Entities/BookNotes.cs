@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace mind_book_api.Entities
 {
-    [Table("book_notes")]
+    [Table("BookNote")]
     public class BookNotes
     {
         public int Id { get; private set; }
