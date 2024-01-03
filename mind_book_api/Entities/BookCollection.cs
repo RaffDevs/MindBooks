@@ -14,8 +14,7 @@ namespace mind_book_api.Entities
 
         public string? Name { get; set; }
 
-        [ForeignKey("OwnerCollectionId")]
-        public string? OwnerCollectionId { get; set; }
+        public Owner? Owner { get; set; }
 
         public List<Book> Books { get; set; } = new List<Book>();
 
