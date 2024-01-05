@@ -1,24 +1,18 @@
+
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using mind_book_api.Entities;
 
-namespace mind_book_api.Entities
+namespace mind_book_api.DTOs
 {
-
-    [Table("BooksCollection")]
-    public class BookCollection
+    public class CreateBookCollectionDTO
     {
-        [Key]
-        public int Id { get; private set; }
-
         public string? Name { get; set; }
 
         public Owner? Owner { get; set; }
 
         public List<Book> Books { get; set; } = new List<Book>();
-
     }
 }

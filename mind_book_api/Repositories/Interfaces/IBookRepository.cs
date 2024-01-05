@@ -15,7 +15,7 @@ namespace mind_book_api.Repositories.Interfaces
 
         public Task<Book> Update(Book data);
 
-        public Task Delete(Book id);
+        public void Delete(Book data);
 
         public Task Commit();
     }

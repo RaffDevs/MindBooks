@@ -26,7 +26,7 @@ namespace mind_book_api.Repositories
             return result.Entity;
         }
 
-        public async Task Delete(Book book)
+        public void Delete(Book book)
         {
             _context.Book.Remove(book);
         }

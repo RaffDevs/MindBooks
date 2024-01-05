@@ -60,7 +60,7 @@ namespace mind_book_api.UseCases
                 throw new NotFoundException(NotFoundException.ErrorMessage);
             }
 
-            await _repository.Delete(book);
+            _repository.Delete(book);
 
             await _repository.Commit();
 
@@ -97,6 +97,7 @@ namespace mind_book_api.UseCases
 
                 await _repository.Update(book);
                 await _repository.Commit();
+                return book;
             }
 
             throw new NotFoundException(NotFoundException.ErrorMessage);
